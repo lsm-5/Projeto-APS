@@ -1,0 +1,66 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragment :: head('CInhospede - Hotéis')}"></head>
+
+<body>
+
+    <header th:replace="~{fragment :: header('Hotel #' + ${hotel.id})}"></header>
+
+    <main>
+        <div class="container mt-4">
+            <div class="row" style="display: flex;flex-direction: row;justify-content: space-between;">
+                <div class="col-12" style="width: fit-content;">
+                    <b>Nome:</b> <span th:text="${hotel.name}"></span><br/>
+                    <b>Descrição:</b> <span th:text="${hotel.description}"></span><br/>
+                    <b>Endereço:</b> <span th:text="${hotel.address}"></span>
+                </div>
+                <div style="width: fit-content;display: flex;flex-direction: column;">
+                  <b>Foto:</b>
+                  <img th:src="@{${hotel.photo}}" alt="foto do hotel" style="width: 200px; height: 200px;"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <a th:href="@{/hotels/{hotelId}/edit(hotelId = ${hotel.id})}">Editar</a> <a href="/hotels">Voltar</a>
+                </div>
+            </div>
+            
+            <div class="row">
+              <h3>Lista de quartos</h3>
+              <div class="col-12">
+                  <table class="table table-hover">
+                      <thead>
+                      <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">Nome</th>
+                          <th scope="col">Descrição</th>
+                          <th scope="col">Foto</th>
+                          <th scope="col">Regras</th>
+                          <th scope="col">Quantidade de Pessoas</th>
+                          <th scope="col">Período disponível</th>
+                          <th scope="col">Valor por dia</th>
+                          <th scope="col"></th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr th:each="room : ${rooms}">
+                          <th class="col-1" scope="row" th:text="${room.id}"></th>
+                          <td class="col-4" th:text="${room.name}"></td>
+                          <td class="col-6" th:text="${room.description}"></td>
+                          <td class="col-1"><img th:src="@{${room.photo}}" alt="foto do hotel" style="width: 100px; height: 100px;"/></td>
+                          <td class="col-2" th:text="${room.rules}"></td>
+                          <td class="col-2" th:text="${room.aPeoples}"></td>
+                          <td class="col-2" th:text="${room.dates}"></td>
+                          <td class="col-2" th:text="${room.value}"></td>
+                          <td class="col-1"><a>Hospedar-se</a></td>
+                      </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+
+            
+        </div>
+    </main>
+</body>
+</html>
