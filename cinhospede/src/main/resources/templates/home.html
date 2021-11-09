@@ -6,6 +6,18 @@
 <body>
     <header th:replace="~{fragment :: header('CInhospede')}"></header>
 
+    <div class="container mt-4">
+        <h3>Olá, <a th:text="${name}"></a>!</h3>
+        <p>
+            Seja bem-vindo ao sistema de hospedagem.
+        </p>
+        <p>
+            <form method="POST" action="/logout">
+                <button type="submit" name="submit" value="value" class="link-button">Para deslogar clique aqui</button>
+            </form> 
+        </p>
+    </div>
+
     <main>
         <div class="container mt-4">
             <div class="list-group">

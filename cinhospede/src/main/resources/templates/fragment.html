@@ -39,7 +39,7 @@
   </div>
 </header>
 
-<div class="container" th:fragment="form(action)">
+<div class="container" th:fragment="form(action, buttonName)">
     <div class="row">
         <form th:object="${newHotelDTO}" th:action="${action}" method="POST">
             <div class="mb-3">
@@ -62,7 +62,7 @@
                 <input class="form-control" th:errorclass="is-invalid" type="text" name="address" th:field="*{address}">
                 <div class="invalid-feedback" th:errors="*{address}"></div>
             </div>
-            <button class="btn btn-primary" type="submit">Criar</button>
+            <button class="btn btn-primary" type="submit" th:text="${buttonName}">Salvar</button>
             <a href="javascript:history.back()">Voltar</a>
         </form>
     </div>

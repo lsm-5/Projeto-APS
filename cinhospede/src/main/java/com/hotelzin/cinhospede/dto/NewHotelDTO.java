@@ -27,8 +27,8 @@ public class NewHotelDTO {
   
 
   // @notnull @decimalmin("0.0")
-  public Hotel toHotel() {
-    return new Hotel(name, description, photo, address);
+  public Hotel toHotel(String adminRef) {
+    return new Hotel(name, description, photo, address, adminRef);
   }
 
   public Hotel toHotel(Hotel hotel) {

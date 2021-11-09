@@ -34,25 +34,27 @@
                           <th scope="col">ID</th>
                           <th scope="col">Nome</th>
                           <th scope="col">Descrição</th>
+                          <th scope="col">Valor da diária R$</th>
+                          <th scope="col">Quantidade de cama de solteiros</th>
+                          <th scope="col">Quantidade de cama de casais</th>
                           <th scope="col">Foto</th>
-                          <th scope="col">Regras</th>
-                          <th scope="col">Quantidade de Pessoas</th>
-                          <th scope="col">Período disponível</th>
-                          <th scope="col">Valor por dia</th>
+                          <th scope="col">Número máximo de pessoas</th>
+                          <th scope="col">Possui suíte?</th>
                           <th scope="col"></th>
                       </tr>
                       </thead>
                       <tbody>
                       <tr th:each="room : ${rooms}">
                           <th class="col-1" scope="row" th:text="${room.id}"></th>
-                          <td class="col-4" th:text="${room.name}"></td>
-                          <td class="col-6" th:text="${room.description}"></td>
-                          <td class="col-1"><img th:src="@{${room.photo}}" alt="foto do hotel" style="width: 100px; height: 100px;"/></td>
-                          <td class="col-2" th:text="${room.rules}"></td>
-                          <td class="col-2" th:text="${room.aPeoples}"></td>
-                          <td class="col-2" th:text="${room.dates}"></td>
+                          <td class="col-1" th:text="${room.name}"></td>
+                          <td class="col-3" th:text="${room.description}"></td>
                           <td class="col-2" th:text="${room.value}"></td>
-                          <td class="col-1"><a>Hospedar-se</a></td>
+                          <td class="col-1" th:text="${room.numberOfSingleBeds}"></td>
+                          <td class="col-1" th:text="${room.numberOfDoubleBeds}"></td>
+                          <td class="col-1"><img th:src="@{${room.photo}}" alt="foto do hotel" style="width: 100px; height: 100px;"/></td>
+                          <td class="col-1" th:text="${room.numberOfPeoples}"></td>
+                          <td class="col-1" th:text="${room.hasSuite} ? 'Sim' : 'Não' "></td>
+                          <td class="col-1"><a href="#" >Hospedar-se</a></td>
                       </tr>
                       </tbody>
                   </table>

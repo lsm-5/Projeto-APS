@@ -22,11 +22,13 @@ public class Hotel {
   private String description;
   private String photo;
   private String address;
+  private String adminRef;
 
-  public Hotel(String name, String description, String photo, String address) {
+  public Hotel(String name, String description, String photo, String address, String adminRef) {
     this.name = name;
     this.description = description;
     this.photo = photo;
     this.address = address;
+    this.adminRef = adminRef;
   }
 }
