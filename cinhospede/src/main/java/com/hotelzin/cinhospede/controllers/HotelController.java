@@ -6,7 +6,6 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import com.hotelzin.cinhospede.dto.NewHotelDTO;
-import com.hotelzin.cinhospede.model.Admin;
 import com.hotelzin.cinhospede.model.Hotel;
 import com.hotelzin.cinhospede.model.Room;
 import com.hotelzin.cinhospede.repositories.HotelRepository;

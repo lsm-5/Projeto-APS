@@ -54,7 +54,7 @@
                           <td class="col-1"><img th:src="@{${room.photo}}" alt="foto do hotel" style="width: 100px; height: 100px;"/></td>
                           <td class="col-1" th:text="${room.numberOfPeoples}"></td>
                           <td class="col-1" th:text="${room.hasSuite} ? 'Sim' : 'Não' "></td>
-                          <td class="col-1"><a href="#" >Hospedar-se</a></td>
+                          <td class="col-1"><a th:href="@{/hotels/{hotelId}/room/{roomId}/reserve(hotelId = ${hotel.id}, roomId = ${room.id})}">Hospedar-se</a></td>
                       </tr>
                       </tbody>
                   </table>

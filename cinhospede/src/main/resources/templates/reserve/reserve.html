@@ -1,0 +1,49 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragment :: head('CInhospede')}">
+  
+</head>
+
+<body>
+    <header th:replace="~{fragment :: header('CInhospede')}"></header>
+
+    <div class="container">
+      <h3>Dados de Pagamento</h3>
+      <div class="row">
+          <form th:object="${PaymentCard}" th:action="@{/hotels/{idHotel}/room/{idRoom}/reserve(idHotel = ${idHotel}, idRoom = ${idRoom})}" method="POST">
+              <div class="mb-3">
+                  <label class="form-label">Nome do cartão</label>
+                  <input class="form-control" type="text" name="cardName">
+              </div>
+              <div class="mb-3">
+                  <label class="form-label">Bandeira</label>
+                  <input class="form-control" type="text" name="cardFlag" >
+              </div>
+              <div class="mb-3">
+                  <label class="form-label">Número do cartão</label>
+                  <input class="form-control"  type="number" name="cardNumber">
+              </div>
+              <div class="mb-3">
+                  <label class="form-label">CVV</label>
+                  <input class="form-control" type="number" name="cardCvv">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Ano de expiração</label>
+                <input class="form-control" type="number" name="cardYearExpiration">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Mês de expiração</label>
+              <input class="form-control" type="number" name="cardMonthExpiration">
+          </div>
+              <button class="btn btn-primary" type="submit">Reservar</button>
+              <a href="javascript:history.back()">Voltar</a>
+          </form>
+      </div>
+  </div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script crossorigin="anonymous" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
