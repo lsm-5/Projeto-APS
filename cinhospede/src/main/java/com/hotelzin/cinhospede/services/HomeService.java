@@ -1,7 +1,7 @@
 package com.hotelzin.cinhospede.services;
 
+import com.hotelzin.cinhospede.collection.HomeCollection;
 import com.hotelzin.cinhospede.model.Admin;
-import com.hotelzin.cinhospede.repositories.AdminRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class HomeService {
   @Autowired
-  private AdminRepository adminRepository;
+  private HomeCollection homeCollection;
 
   public Admin login(String email, String senha) {
-    return adminRepository.findByEmailAndPassword(email, senha);
+    return homeCollection.login(email, senha);
   }
   
 }
