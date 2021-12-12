@@ -2,6 +2,7 @@ package com.hotelzin.cinhospede;
 
 import java.util.List;
 
+import com.hotelzin.cinhospede.dto.Payment;
 import com.hotelzin.cinhospede.model.Admin;
 import com.hotelzin.cinhospede.model.Hotel;
 import com.hotelzin.cinhospede.model.Room;
@@ -44,6 +45,10 @@ public class Facade {
 
   public void deleteHotel(Long id) {
     hotelService.deleteHotel(id);
+  }
+
+  public Boolean makeReservation(Payment payment){
+    return hotelService.makeReservation(payment);
   }
 
 }

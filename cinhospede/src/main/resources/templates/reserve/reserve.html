@@ -9,9 +9,9 @@
     <header th:replace="~{fragment :: header('CInhospede')}"></header>
 
     <div class="container">
-      <h3>Dados de Pagamento</h3>
+      <h3>Dados de pagamento por cartão</h3>
       <div class="row">
-          <form th:object="${PaymentCard}" th:action="@{/hotels/{idHotel}/room/{idRoom}/reserve(idHotel = ${idHotel}, idRoom = ${idRoom})}" method="POST">
+          <form th:object="${PaymentCard}" th:action="@{/hotels/{idHotel}/room/{idRoom}/reserve/card(idHotel = ${idHotel}, idRoom = ${idRoom})}" method="POST">
               <div class="mb-3">
                   <label class="form-label">Nome do cartão</label>
                   <input class="form-control" type="text" name="cardName">
@@ -36,6 +36,19 @@
               <label class="form-label">Mês de expiração</label>
               <input class="form-control" type="number" name="cardMonthExpiration">
           </div>
+              <button class="btn btn-primary" type="submit">Reservar</button>
+              <a href="javascript:history.back()">Voltar</a>
+          </form>
+      </div>
+      <br/>
+      <h3>Dados de pagamento por pix</h3>
+      <div class="row">
+          <form th:action="@{/hotels/{idHotel}/room/{idRoom}/reserve/pix(idHotel = ${idHotel}, idRoom = ${idRoom})}" method="POST">
+              <div class="mb-3">
+                  <label class="form-label">Qr code para o pagamento por pix (expira em 2 minutos):</label><br/>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Link_pra_pagina_principal_da_Wikipedia-PT_em_codigo_QR_b.svg/1200px-Link_pra_pagina_principal_da_Wikipedia-PT_em_codigo_QR_b.svg.png" alt="qrcode" style="width: 200px; height: 200px;">
+              </div>
+             
               <button class="btn btn-primary" type="submit">Reservar</button>
               <a href="javascript:history.back()">Voltar</a>
           </form>
