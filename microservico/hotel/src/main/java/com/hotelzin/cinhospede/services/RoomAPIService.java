@@ -3,7 +3,7 @@ package com.hotelzin.cinhospede.services;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.hotelzin.cinhospede.model.Room;
+import com.hotelzin.cinhospede.dto.Room;
 
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Component;

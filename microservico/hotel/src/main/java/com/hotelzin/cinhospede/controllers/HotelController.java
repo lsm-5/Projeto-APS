@@ -7,8 +7,8 @@ import javax.validation.Valid;
 
 import com.hotelzin.cinhospede.Facade;
 import com.hotelzin.cinhospede.dto.NewHotelDTO;
+import com.hotelzin.cinhospede.dto.Room;
 import com.hotelzin.cinhospede.model.Hotel;
-import com.hotelzin.cinhospede.model.Room;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;

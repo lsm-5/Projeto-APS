@@ -3,9 +3,9 @@ package com.hotelzin.cinhospede;
 import java.util.List;
 
 import com.hotelzin.cinhospede.dto.Payment;
+import com.hotelzin.cinhospede.dto.Room;
 import com.hotelzin.cinhospede.model.Admin;
 import com.hotelzin.cinhospede.model.Hotel;
-import com.hotelzin.cinhospede.model.Room;
 import com.hotelzin.cinhospede.services.HomeService;
 import com.hotelzin.cinhospede.services.HotelService;
 

@@ -1,4 +1,4 @@
-package com.hotelzin.cinhospede.model;
+package com.hotelzin.cinhospede.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
