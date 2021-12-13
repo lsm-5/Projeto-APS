@@ -3,7 +3,7 @@ package com.hotelzin.cinhospede.controllers;
 import javax.servlet.http.HttpSession;
 
 import com.hotelzin.cinhospede.Facade;
-import com.hotelzin.cinhospede.model.Admin;
+import com.hotelzin.cinhospede.dto.AdminApiResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +27,7 @@ public class HomeController {
 
   @PostMapping("/login")
   public ModelAndView login(String email, String password, HttpSession session) {
-    Admin admin = facade.login(email, password);
+    AdminApiResponse admin = facade.login(email, password);
 
     if (admin != null) {
       session.setAttribute("name", admin.getName());

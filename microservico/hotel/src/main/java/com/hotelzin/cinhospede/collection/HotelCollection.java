@@ -2,7 +2,6 @@ package com.hotelzin.cinhospede.collection;
 
 import java.util.List;
 
-import com.hotelzin.cinhospede.dto.Room;
 import com.hotelzin.cinhospede.model.Hotel;
 import com.hotelzin.cinhospede.repositories.HotelRepository;
 

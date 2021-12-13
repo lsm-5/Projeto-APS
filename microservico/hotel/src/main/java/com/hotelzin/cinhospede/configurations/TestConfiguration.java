@@ -1,8 +1,6 @@
 package com.hotelzin.cinhospede.configurations;
 
-import com.hotelzin.cinhospede.model.Admin;
 import com.hotelzin.cinhospede.model.Hotel;
-import com.hotelzin.cinhospede.repositories.AdminRepository;
 import com.hotelzin.cinhospede.repositories.HotelRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +11,6 @@ import org.springframework.context.annotation.Configuration;
 public class TestConfiguration implements CommandLineRunner {
   @Autowired
   private HotelRepository hotelRepository;
-
-  @Autowired
-  private AdminRepository adminRepository;
 
   @Override
   public void run(String... args) throws Exception {
@@ -31,7 +26,6 @@ public class TestConfiguration implements CommandLineRunner {
                                   "Rua 3, ao lado da rua 5",
                                   "admin@admin.com"));
 
-    adminRepository.save(new Admin("admin", "admin@admin.com", "admin"));
   }
   
 }
