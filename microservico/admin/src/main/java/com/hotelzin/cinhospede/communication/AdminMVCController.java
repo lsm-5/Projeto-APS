@@ -16,13 +16,13 @@ public class AdminMVCController {
   @Autowired
   private AdminController adminController;
 
-  @GetMapping("/{email}/{password}/admin")
+  @GetMapping("/admin/{email}/{password}")
   @ResponseBody
   public Admin home(@PathVariable String email, @PathVariable String password) {
     return adminController.findByEmailAndPassword(email, password);
   }
 
-  @GetMapping("/")
+  @GetMapping("/admin/")
   public ModelAndView home() {
     ModelAndView mv = new ModelAndView("new");
     return mv;

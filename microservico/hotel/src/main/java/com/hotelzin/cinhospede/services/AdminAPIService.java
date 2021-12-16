@@ -18,7 +18,7 @@ public class AdminAPIService {
     public AdminApiResponse findByEmailAndPassword(String email, String password) {
       return (AdminApiResponse) 
               client().get()
-                .uri("/{email}/{password}/admin", email, password)
+                .uri("/admin/{email}/{password}", email, password)
                 .retrieve()
                 .bodyToMono(AdminApiResponse.class).block();
     }

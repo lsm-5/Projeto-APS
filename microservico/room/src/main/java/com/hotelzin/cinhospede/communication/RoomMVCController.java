@@ -18,13 +18,13 @@ public class RoomMVCController {
   @Autowired
   private RoomController roomController;
 
-  @GetMapping("/{id}/rooms")
+  @GetMapping("/rooms/{id}")
   @ResponseBody
   public List<Room> home(@PathVariable Long id) {
     return roomController.getAllRooms(id);
   }
 
-  @GetMapping("/")
+  @GetMapping("/rooms/")
   public ModelAndView home() {
     ModelAndView mv = new ModelAndView("new");
     return mv;

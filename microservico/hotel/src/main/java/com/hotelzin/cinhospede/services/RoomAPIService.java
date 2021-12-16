@@ -23,7 +23,7 @@ public class RoomAPIService {
 
   public List<Room> getAllRoom(Long hotelId) {
     Mono<List<Room>> response = client().get()
-        .uri("/{hotelId}/rooms", hotelId)
+        .uri("/rooms/{hotelId}", hotelId)
         .retrieve()
         .bodyToMono(new ParameterizedTypeReference<List<Room>>() {});
 
