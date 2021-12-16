@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.hotelzin.cinhospede.collection.HotelCollection;
 import com.hotelzin.cinhospede.dto.Payment;
-import com.hotelzin.cinhospede.dto.Payment;
 import com.hotelzin.cinhospede.model.Hotel;
 import com.hotelzin.cinhospede.model.Room;
 import com.hotelzin.cinhospede.services.adapter.PaymentAPIAdapter;
