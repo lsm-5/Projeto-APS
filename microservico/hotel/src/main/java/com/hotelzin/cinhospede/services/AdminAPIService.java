@@ -2,16 +2,17 @@ package com.hotelzin.cinhospede.services;
 
 import com.hotelzin.cinhospede.dto.AdminApiResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Component
 public class AdminAPIService {
 
-    private String base_url = "http://localhost:8082";
+  @Autowired WebClient.Builder wBuilder;
 
-    private WebClient client() {
-      return WebClient.builder().baseUrl(base_url).build();
+  private WebClient client() {
+    return wBuilder.baseUrl("lb://admin").build();
   }
 
     public AdminApiResponse findByEmailAndPassword(String email, String password) {
